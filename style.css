@@ -282,16 +282,64 @@ main div {
     height: 350px;
     background-color: #ee5253;
 }
-.hero .hero_image .right .pic:last-child {
+.hero_image .right .pic:last-child {
     background-color: #54a0ff;
     height: 300px;
 }
 
 
 /* === 03. Features */
-
+.features .grid {
+    flex-wrap: wrap;
+}
+:where(.grid, .grid_text) h2 span {
+    font-size: calc(0.5em + 1vw);
+    font-weight: 400;
+}
+.features .grid .half {
+    flex: 100%;
+    text-align: center;
+    max-width: 280px;
+    margin: 0 auto 4em;
+}
+.features .grid .icon {
+    font-size: 3em;
+    color: var(--main-color);
+    margin-bottom: 0.75em;
+}
+.features .grid h3 {
+    font-weight: 1.5em;
+    font-weight: 600;
+    margin-bottom: 00.5em;
+}
 
 /* === 04. Brands */
+.bg_white {
+    position: relative;
+    background-color: var(--light-color);
+    overflow: hidden;
+}
+.bg_white h2 {
+    color: var(--dark-color);
+}
+.brands::before {
+    content: "";
+    position: absolute;
+    left: -60px;
+    top: -60px;
+    width: 400px;
+    height: 200px;
+    background-color: var(--main-color);
+    filter: blur(100px);
+}
+.brands .grid {
+    flex-direction: column;
+    padding: 0;
+}
+.brands .grid_text {
+    margin-bottom: 5em;
+    position: relative;
+}
 
 
 /* === 05. Engage */
@@ -330,11 +378,18 @@ main div {
     .button .menu-trigger, .menu .close {
         display: none;
     }
-    .hero .grid {
+    .hero .grid, .brands .grid {
         flex-direction: row;
         padding-top: 0;
     }
     .hero .grid .half:last-child {
         padding-left: 130px;
+    }
+    .start-meeting {
+        align-self: flex-end;
+        margin-top: auto;
+    }
+    .features .grid {
+        flex-wrap: nowrap;
     }
 }
