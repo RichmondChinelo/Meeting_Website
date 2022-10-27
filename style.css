@@ -161,7 +161,7 @@ main div {
     display: flex;
     padding-top: 50px;
 }
-.hero {
+.hero, .engage {
     border-bottom: 1px solid #3f3b4a;
 }
 .hero .grid {
@@ -235,7 +235,8 @@ main div {
     position: relative;
     z-index: -1;
 }
-.hero .hero_image .col .pic {
+/* I deleted .col between .hero_image and .pic. */
+.hero .hero_image .pic, .testimonials .grid .pic {
     position: relative;
     min-height: 250px;
     background-color: var(--main-color);
@@ -243,44 +244,44 @@ main div {
     margin-bottom: 1em;
     overflow: hidden;
 }
-.hero .hero_image img {
+/* I added .pic between .hero_image and img */
+.hero .hero_image .pic img, .testimonials .grid .pic img {
     position: absolute;
     left: 0;
     bottom: 0;
     object-fit: cover;
     width: 100%;
 }
-.hero .hero_image .left {
+.hero_image .left {
     top: -50px;
 }
-.hero .hero_image .middle {
+.hero_image .middle {
     top: -250px;
     margin-bottom: -250px;
 }
-.hero .hero_image .right {
+.hero_image .right {
     top: 50px;
 }
-.hero .hero_image .left .pic:first-child {
+.hero_image .left .pic:first-child {
     height: 350px;
     background-color: #feca57;
 }
-.hero .hero_image .left .pic:last-child {
+.hero_image .left .pic:last-child {
     background-color: #8abde3;
 }
-.hero .hero_image .middle .pic:nth-child(1) {
-    background-color: var(--main-color);
-    height: 450px;
+.hero_image .middle .pic:nth-child(1) {
+    height: 400px;
 }
-.hero .hero_image .middle .pic:nth-child(2) {
+.hero_image .middle .pic:nth-child(2) {
     background-color: #c8d6e5;
-    height: 350px;
+    height: 300px;
 }
-.hero .hero_image .middle .pic:nth-child(3) {
+.hero_image .middle .pic:nth-child(3) {
     background-color: #222f3e;
 }
-.hero .hero_image .right .pic:first-child {
-    height: 350px;
+.hero_image .right .pic:first-child {
     background-color: #ee5253;
+    height: 300px;
 }
 .hero_image .right .pic:last-child {
     background-color: #54a0ff;
@@ -310,7 +311,7 @@ main div {
 .features .grid h3 {
     font-weight: 1.5em;
     font-weight: 600;
-    margin-bottom: 00.5em;
+    margin-bottom: 0.5em;
 }
 
 /* === 04. Brands */
@@ -340,15 +341,100 @@ main div {
     margin-bottom: 5em;
     position: relative;
 }
+.brands ul {
+    transform: rotate(340deg);
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.brands ul li i {
+    font-size: 2em;
+    margin-right: 1em;
+}
+.brands ul li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 1em 2em;
+    background-color: var(--grey-color);
+    border-radius: 40px;
+    width: 200%;
+}
+.brands ul li:nth-child(1) {
+    background-color: #4285f4;
+    left: 18%;
+}
+.brands ul li:nth-child(2) {
+    background-color: #f25022;
+    left: 8%;
+    width: 100%;
+}
+.brands ul li:nth-child(3) {
+    background-color: #e50914;
+    left: -6%;
+}
+.brands ul li:nth-child(4) {
+    background-color: #3d9ae8;
+    left: 35%;
+}
+.brands ul li:nth-child(5) {
+    background-color: #107c10;
+}
 
 
 /* === 05. Engage */
+.engage .grid {
+    flex-direction: column;
+}
+.engage .image {
+    margin: 0 auto 2em;
+}
+.engage .button {
+    margin-left: 2em;
+    text-align: center;
+}
+
+/* === 06. Testimonials */
+.testimonials .grid {
+    max-width: 480px;
+    margin: 0 auto;
+    flex-direction: row;
+    gap: 0;
+    padding-left: 0;
+}
+.testimonials .half:first-child {
+    flex: 0 0 90px;
+}
+.testimonials .grid .pic {
+    background-color: #c8d6e5;
+}
+.testimonials .item {
+    padding-left: calc(1em + 3vw);
+}
+.testimonials .item p:first-child {
+    position: relative;
+    font-size: calc(1.5em + 1.5em);
+    color: inherit;
+    line-height: 1.2;
+    margin-bottom: 1em;
+}
+.testimonials .item sup {
+    position: absolute;
+    top: -120px;
+    left: -100px;
+    color: var(--main-color);
+    font-size: 7em;
+    vertical-align: top;
+    font-family: cursive;
+    z-index: -1;
+    opacity: -5;
+}
+.engage .button, .testimonials .item .button {
+    margin-top: 3em;
+}
 
 
-/* === 06. cta */
-
-
-/* === 07. footer */
+/* === 07. Footer */
 
 
 /* === 08. Animation */
